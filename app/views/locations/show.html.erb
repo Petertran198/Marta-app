@@ -8,17 +8,17 @@
 <h2>The closest bus are ...</h2>
 <!-- #If bus_count is greater then one that means there is a bus  -->
 <% if @bus_count > 1 %> 
-  <% @nearby_bus.each do |bus| %>
-  <p>
-    <strong>Route:</strong><%= bus["ROUTE"] %> <br>
-    <strong>Vehicle:</strong> <%= bus["VEHICLE"] %> <br>
-    <strong>Next Stop:</strong> <%= bus["TIMEPOINT"] %>
-  </p>
-  <% end %>
+    <% @nearby_bus.each do |bus| %>
+      <p>
+        <strong>Route:</strong><%= bus["ROUTE"] %> <br>
+        <strong>Vehicle:</strong> <%= bus["VEHICLE"] %> <br>
+        <strong>Next Stop:</strong> <%= bus["TIMEPOINT"] %>
+      </p>
+    <% end %>
 <% else %> 
-
-
-
+      <p>
+        .. sorry there is no bus near you. Call an Uber. 
+      </p>
 <% end %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
