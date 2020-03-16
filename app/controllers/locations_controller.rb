@@ -10,8 +10,20 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    #Httparty.get is a method that will parse through the json and return us data, as a response, or in another word readable format for us to use .
+    #@buses rn is holding all the infomation seen at this url 
     @buses = HTTParty.get('http://developer.itsmarta.com/BRDRestService/RestBusRealTimeService/GetAllBus')
-    
+
+    @bus_count = 0 
+    @nearby_bus = []
+
+    @buses.each do |bus|
+      if nearby()
+
+      end
+
+    end
+
   end
 
   # GET /locations/new
