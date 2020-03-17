@@ -14,6 +14,15 @@
         <strong>Vehicle:</strong> <%= bus["VEHICLE"] %> <br>
         <strong>Next Stop:</strong> <%= bus["TIMEPOINT"] %>
       </p>
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+              });
+            }
+          </script>
     <% end %>
 <% else %> 
       <p>
